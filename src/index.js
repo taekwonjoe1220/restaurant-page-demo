@@ -1,5 +1,9 @@
 // Imports
 import "./style.css";
+import "@fortawesome/fontawesome-free/js/fontawesome";
+import "@fortawesome/fontawesome-free/js/solid";
+import "@fortawesome/fontawesome-free/js/regular";
+import "@fortawesome/fontawesome-free/js/brands";
 
 import loadHeader from "./header.js";
 import loadFooter from "./footer.js";
@@ -14,7 +18,9 @@ const content = document.getElementById("content");
 
 // Iniitial Load of Header, Home, & Footer
 // Load Header
-content.appendChild(loadHeader());
+content.append(loadHeader());
+content.append(loadHome());
+content.append(loadFooter());
 // Load body (home) ** In Progress **
 
 // Load Footer ** In Progress **

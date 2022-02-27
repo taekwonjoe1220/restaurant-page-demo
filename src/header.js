@@ -7,14 +7,12 @@ function createHeader() {
 
   header.appendChild(createContainer());
 
-  //   header.appendChild(creaeteNav());
   return header;
 }
 
 function createContainer() {
   const container = document.createElement("div");
   container.classList.add("container");
-
   container.appendChild(createContentWrapper());
   container.appendChild(createNav());
   return container;
@@ -43,6 +41,9 @@ function createNav() {
   (function createNavList(arr) {
     for (let i = 0; i < arr.length; i++) {
       const li = document.createElement("li");
+      if (i === 0) {
+        li.classList.add("current");
+      }
       li.classList.add(arr[i]);
       li.textContent = arr[i];
       navMenu.append(li);
