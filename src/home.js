@@ -3,12 +3,10 @@
 // DOM caching for content background
 const content = document.getElementById("content");
 
-// Home Page body content ** In Progress **
+// Home Page body content ** In Progress ** - Simple background Image for now... possibly update with testimonials or more typical landing page elements later
 function createHome() {
   const home = document.createElement("div");
   home.classList.add("home-content");
-
-  // testing with some lorem text
   return home;
 }
 

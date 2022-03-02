@@ -1,18 +1,18 @@
 "use strict";
 
-// Header Content ** Mostly Done **
+// Header Content
 function createHeader() {
   const header = document.createElement("header");
   header.classList.add("header");
 
   header.appendChild(createContainer());
-
   return header;
 }
 
 function createContainer() {
   const container = document.createElement("div");
   container.classList.add("container");
+
   container.appendChild(createContentWrapper());
   container.appendChild(createNav());
   return container;
@@ -25,13 +25,14 @@ function createContentWrapper() {
   h1.textContent = "South Street Roasters";
   const p = document.createElement("p");
   p.textContent = "Artisan Coffee";
+
   contentWrapper.appendChild(h1);
   contentWrapper.appendChild(p);
   return contentWrapper;
 }
 
 function createNav() {
-  const navItems = ["home", "products", "coffee", "about", "contact"];
+  const navItems = ["home", "about", "coffee", "contact"];
   const nav = document.createElement("nav");
   nav.classList.add("nav");
 
