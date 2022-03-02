@@ -17,15 +17,14 @@ const content = document.getElementById("content");
 
 // Iniitial Load of Header, Home, & Footer
 document.body.prepend(loadHeader());
-content.append(loadHome());
+content.appendChild(loadHome());
 document.body.appendChild(loadFooter());
-
 // updated DOM Caching
 const navList = document.querySelectorAll("li");
-const home = document.querySelector(".home");
-const about = document.querySelector(".about");
-const coffee = document.querySelector(".coffee");
-const contact = document.querySelector(".contact");
+// const home = document.querySelector(".home");
+// const about = document.querySelector(".about");
+// const coffee = document.querySelector(".coffee");
+// const contact = document.querySelector(".contact");
 
 // House logic for loading content dynamically with event listeners
 // event listener for navbar
@@ -35,15 +34,39 @@ navList.forEach((item) => {
     if (!e.target.classList.contains("current")) {
       removeCurrent();
       e.target.classList.add("current");
+      // remove current node from content
+      loadNew(e.target.classList[0]);
     }
   });
 });
 
 // functions to update page
 function removeCurrent() {
+  // remove current class for css update
   navList.forEach((item) => {
     if (item.classList.contains("current")) {
       item.classList.remove("current");
     }
   });
+  // remove the content from the dom so we can dynamically load new content
+  content.removeChild(content.firstChild);
+}
+
+function loadNew(target) {
+  switch (target) {
+    case "about":
+      content.appendChild(loadAbout());
+      break;
+    case "home":
+      content.appendChild(loadHome());
+      break;
+    case "contact":
+      content.appendChild(loadContact());
+      break;
+    case "coffee":
+      content.appendChild(loadCoffee());
+      break;
+    default:
+      console.log("oops, something went wrong");
+  }
 }
