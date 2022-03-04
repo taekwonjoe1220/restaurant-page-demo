@@ -21,12 +21,9 @@ content.appendChild(loadHome());
 document.body.appendChild(loadFooter());
 // updated DOM Caching
 const navList = document.querySelectorAll("li");
-// const home = document.querySelector(".home");
-// const about = document.querySelector(".about");
-// const coffee = document.querySelector(".coffee");
-// const contact = document.querySelector(".contact");
 
 // House logic for loading content dynamically with event listeners
+
 // event listener for navbar
 navList.forEach((item) => {
   item.addEventListener("click", (e) => {
@@ -34,7 +31,7 @@ navList.forEach((item) => {
     if (!e.target.classList.contains("current")) {
       removeCurrent();
       e.target.classList.add("current");
-      // remove current node from content
+      // dynamically update content section based on target of click event
       loadNew(e.target.classList[0]);
     }
   });
@@ -52,6 +49,7 @@ function removeCurrent() {
   content.removeChild(content.firstChild);
 }
 
+// load the new content when navbar item is clicked
 function loadNew(target) {
   switch (target) {
     case "about":

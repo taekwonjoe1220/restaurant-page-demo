@@ -5,11 +5,15 @@
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background: #555;
+}
+#content {
+  width: 100%;
 }
 .header {
   background: #222;
   color: white;
-  height: 120px;
+  height: 110px;
   width: 100%;
 }
 .container {
@@ -86,5 +90,34 @@ footer {
 .home-content {
   background: url("./img/desktop-bg.jpg") no-repeat center center/cover;
   width: 100%;
-  height: 600px;
+  height: 572px;
+}
+
+/* Contact page */
+#content .contact-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 800px;
+}
+
+#content .contact-content .form-container {
+  background: url("./img/contact-bg.jpg") no-repeat center center/cover;
+  width: 80%;
+  height: 85%;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.contact-content h1 {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  color: rgb(248, 178, 48);
+  margin-top: 15px;
 }
